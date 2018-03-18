@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+</head>
+	<body>
+		
+		<?php include'./includes/header.php'; ?>
+		
+		<FORM action="<?php echo $_SERVER['PHP_SELF']; ?>" METHOD="post" >
+			<P>Username: <INPUT TYPE="text" NAME="id"  SIZE=10></P>
+			<P>Password: <INPUT TYPE="text" NAME="pass"  SIZE=10></P>
+			<P><INPUT TYPE="submit" NAME="submit" VALUE="Login"></P>
+		</FORM>
+		<?php
+			$login = $_POST['id'];
+			$password = $_POST['pass'];
+			
+			if ($login == "jdoe" && $password == "password")
+			{
+				header("Location: information.html");
+			}
+			else
+			{
+				echo "<P>Incorrect Username or Password, try again</p>"
+			}
+		?>
+		
+		<?php include'./includes/footer.php'; ?>
+	</body>
+</html>
